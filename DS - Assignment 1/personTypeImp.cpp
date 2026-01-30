@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// Constructor function
 personType::personType(string first, string last)
 {
     firstName = first;
@@ -13,12 +14,13 @@ personType::personType(string first, string last)
     middleName = "";
 }
 
-
+// Boolean function to determine whether or not a string is empty
 static bool isEmpty(string a)
 {
     return a == "";
 }
 
+// Prints the student's names and omits anything that is empty
 void personType::print() const
 {
     if (!isEmpty(firstName))
@@ -35,6 +37,7 @@ void personType::print() const
     }
 }
 
+// Setter function
 void personType::setName(string first, string last, string middle)
 {
     firstName = first;
@@ -42,6 +45,7 @@ void personType::setName(string first, string last, string middle)
     lastName = last;
 }
 
+// Name check function that checks the first and last name against the other objects names and returns whether they are equal
 void personType::nameCheck(const personType& other) const
 {
     if (firstName == other.firstName)
@@ -63,6 +67,7 @@ void personType::nameCheck(const personType& other) const
     }
 }
 
+// Getter functions for the first, last, and middle names
 string personType::getFirstName() const
 {
     return firstName;

@@ -28,6 +28,7 @@ public:
     // Function to return the middle name
     // Value of middleName is returned
 
+    // Name check function to compare the first and last names of the two students
     void nameCheck(const personType& other) const;
 
     personType(string first, string last);
