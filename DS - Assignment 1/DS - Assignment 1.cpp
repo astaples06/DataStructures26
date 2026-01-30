@@ -11,27 +11,30 @@ using namespace std;
 int main()
 {
     personType student("Lisa", "Regan");
+    personType student2("", "");
 
-    student.print();
+    string first, middle, last;
+
+    student.setName("Lisa", "Regan", "");
+
+    cout << "Enter your student's first name (Press enter without typing if you would like to leave it blank): ";
+    getline(cin, first);
+
+    cout << "\nEnter your student's middle name (Press enter without typing if you would like to leave it blank): ";
+    getline(cin, middle);
+
+    cout << "\nEnter your student's last name (Press enter without typing if you would like to leave it blank): ";
+    getline(cin, last);
 
     cout << endl;
 
+    student2.setName(first, last, middle);
 
-    //     string firstName;
-    //     string lastName;
+    student2.print();
 
+    cout << "\nOriginal Name: " << student.getFirstName() << " " << student.getLastName() << "\n" << endl;
 
-    //     cout << "Please enter the student's first name: ";
-    //     cin >> firstName;
-    //     cout << "Please enter the student's last name: ";
-    //     cin >> lastName;
+    student.nameCheck(student2);
 
-    //   personType student2;
-
-    //   student2.setName(firstName,lastName);
-
-
-    //     cout << "Second student's first name: " << student2.getFirstName() << endl;
-    //     cout << "Second Student's last name: " << student2.getLastName() << endl;
     return 0;
 }

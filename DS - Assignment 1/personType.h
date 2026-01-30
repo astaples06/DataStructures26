@@ -7,12 +7,11 @@ using namespace std;
 class personType
 {
 public:
-
     //Function to output the first name and last name
     //in the form firstName lastName.
-    void print(string first, string last) const;
+    void print() const;
 
-    void setName(string first, string last);
+    void setName(string first, string last, string middle);
     //Function to set firstName and lastName according 
     //to the parameters.
     //Postcondition: firstName = first; lastName = last
@@ -25,7 +24,13 @@ public:
     //Function to return the last name.
     //Postcondition: The value of lastName is returned.
 
-    personType(string first = "", string last = "");
+    string getMiddleName() const;
+    // Function to return the middle name
+    // Value of middleName is returned
+
+    void nameCheck(const personType& other) const;
+
+    personType(string first, string last);
     //Constructor
     //Sets firstName and lastName according to the parameters.
     //The default values of the parameters are null strings.
@@ -34,26 +39,6 @@ public:
 private:
     string firstName = ""; //variable to store the first name
     string lastName = "";  //variable to store the last name
+    string middleName = ""; // variable to store the middle name
 };
-
-void personType::print(string first, string last) const
-{
-    cout << "First Name: " << first << "\nLast Name: " << last << endl;
-}
-
-void personType::setName(string first, string last)
-{
-    firstName = first;
-    lastName = last;
-}
-
-string personType::getFirstName() const
-{
-    return firstName;
-}
-
-string personType::getLastName() const
-{
-    return lastName;
-}
 

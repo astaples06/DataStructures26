@@ -6,15 +6,61 @@
 
 using namespace std;
 
-void personType::print(string first, string last) const
-{
-    cout << firstName << " " << lastName;
-}
-
-void personType::setName(string first, string last)
+personType::personType(string first, string last)
 {
     firstName = first;
     lastName = last;
+    middleName = "";
+}
+
+
+static bool isEmpty(string a)
+{
+    return a == "";
+}
+
+void personType::print() const
+{
+    if (!isEmpty(firstName))
+    {
+        cout << "Student's First Name: " << getFirstName() << endl;
+    }
+    if (!isEmpty(middleName))
+    {
+        cout << "Student's Middle Name: " << getMiddleName() << endl;
+    }
+    if (!isEmpty(lastName))
+    {
+        cout << "Student's Last Name: " << getLastName() << endl;
+    }
+}
+
+void personType::setName(string first, string last, string middle)
+{
+    firstName = first;
+    middleName = middle;
+    lastName = last;
+}
+
+void personType::nameCheck(const personType& other) const
+{
+    if (firstName == other.firstName)
+    {
+        cout << "The students have the same first name!" << endl;
+    }
+    else if (firstName != other.firstName)
+    {
+        cout << "The students's first names do not match." << endl;
+    }
+
+    if (lastName == other.lastName)
+    {
+        cout << "The students have the same last name!" << endl;
+    }
+    else if (lastName != other.lastName)
+    {
+        cout << "The students's last names do not match." << endl;
+    }
 }
 
 string personType::getFirstName() const
@@ -27,11 +73,7 @@ string personType::getLastName() const
     return lastName;
 }
 
-//constructor
-personType::personType(string first, string last)
-
+string personType::getMiddleName() const
 {
-    firstName = first;
-    lastName = last;
+    return middleName;
 }
-
